@@ -1,0 +1,12 @@
+{
+  "lang": {
+    "es": "Español",
+    "en": "Inglés"
+  },
+  "LoginPage": {
+    "LoginPage": "Página de Inicio"
+  },
+  "PrivatePage": {
+    "PrivatePage": "Página Privada"
+  }
+}
