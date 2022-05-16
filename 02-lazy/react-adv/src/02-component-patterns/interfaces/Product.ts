@@ -14,15 +14,18 @@ export interface ProductContextProps {
   counter: number;
   increaseBy: (value: number) => void;
   product: Product;
+  maxCount: number;
 }
 
 export interface ProductCardProps {
   product: Product;
-  children?: ReactElement | ReactElement[];
+  // children?: ReactElement | ReactElement[];
+  children: (args: ProductCardHandlers) => JSX.Element;
   className?: string;
   style?: CSSProperties;
   onChange?: (args: OnChangeArgs) => void;
   value?: number;
+  initialValues: InitialValues;
 }
 
 export interface ProductTitleProps {
@@ -50,4 +53,18 @@ export interface ProductCardHOCProps {
 export interface OnChangeArgs {
   product: Product;
   count: number;
+}
+
+export interface InitialValues {
+  count?: number;
+  maxCount: number;
+}
+
+export interface ProductCardHandlers {
+  count: number;
+  isMaxCountReached: boolean;
+  maxCount?: number;
+  product: Product;
+  increaseBy: (value: number) => void;
+  reset: () => void;
 }
